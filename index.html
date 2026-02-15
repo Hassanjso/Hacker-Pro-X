@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#000000">
+    <title>HackerX - Learn Ethical Hacking & Cybersecurity</title>
+    
+    <!-- Open Graph / Facebook / WhatsApp Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hackerx.app/">
+    <meta property="og:title" content="HackerX - Learn Ethical Hacking & Cybersecurity">
+    <meta property="og:description" content="Master ethical hacking from industry experts. Learn penetration testing, network security, and cybersecurity. Join 500K+ students!">
+    <meta property="og:image" content="icon/Hacker Anonymous Phone Wallpaper.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="HackerX - Ethical Hacking Platform">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hackerx.app/">
+    <meta name="twitter:title" content="HackerX - Learn Ethical Hacking & Cybersecurity">
+    <meta name="twitter:description" content="Master ethical hacking from industry experts. Learn penetration testing, network security, and cybersecurity. Join 500K+ students!">
+    <meta name="twitter:image" content="icon/Hacker Anonymous Phone Wallpaper.jpg">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="description" content="Master ethical hacking from industry experts. Learn penetration testing, network security, and cybersecurity. Join 500K+ students!">
+    <meta name="keywords" content="ethical hacking, cybersecurity, penetration testing, network security, hacking courses">
+    
+    <link rel="icon" type="image/jpeg" href="icon/Hacker Anonymous Phone Wallpaper.jpg">
+    <link rel="apple-touch-icon" href="icon/Hacker Anonymous Phone Wallpaper.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Google AdMob SDK -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9163384302583891" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Login/Signup Modal -->
+    <div id="authModal" class="auth-modal">
+        <div class="auth-container">
+            <div class="auth-header">
+                <div class="auth-logo">
+                    <div class="logo-icon">⚡</div>
+                    <span class="logo-text">HackerX</span>
+                </div>
+                <h2 id="authTitle">Welcome to HackerX</h2>
+                <p id="authSubtitle">Start your ethical hacking journey today</p>
+            </div>
+            
+            <!-- Signup Form -->
+            <form id="signupForm" class="auth-form">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" placeholder="Create a password" required minlength="6">
+                </div>
+                <div class="form-group">
+                    <label for="signupConfirmPassword">Confirm Password</label>
+                    <input type="password" id="signupConfirmPassword" placeholder="Confirm password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-large btn-full">Create Account</button>
+                <p class="auth-switch">
+                    Already have an account? <a href="#" id="showLogin">Login</a>
+                </p>
+            </form>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="auth-form" style="display: none;">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="rememberMe">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn btn-primary btn-large btn-full">Login</button>
+                <p class="auth-switch">
+                    Don't have an account? <a href="#" id="showSignup">Create Account</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main App Content (Hidden until login) -->
+    <div id="mainApp" style="display: none;">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo-icon">⚡</div>
+                <span class="logo-text">HackerX</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#terminal">Terminal</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#instructors">Instructors</a></li>
+                <li><a href="#" id="inviteLinkBtn" class="btn-secondary" style="padding: 8px 16px; font-size: 0.9rem;">📤 Invite Friends</a></li>
+                <li><a href="#contact" class="btn-primary">Get Started</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="grid-overlay"></div>
+            <div class="particles"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    Master <span class="gradient-text">Ethical Hacking</span><br>
+                    & Cybersecurity
+                </h1>
+                <p class="hero-subtitle">
+                    Learn from industry experts. Build real-world skills. 
+                    Start your journey to becoming a certified ethical hacker.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-large">Start Learning Free</button>
+                    <button class="btn btn-secondary btn-large">Watch Demo</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">500K+</div>
+                        <div class="stat-label">Students</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Courses</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">4.8★</div>
+                        <div class="stat-label">Rating</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card card-1">
+                    <div class="card-icon">🔒</div>
+                    <div class="card-text">Security</div>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-icon">💻</div>
+                    <div class="card-text">Coding</div>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-icon">🌐</div>
+                    <div class="card-text">Network</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Categories -->
+    <section id="courses" class="categories">
+        <div class="container">
+            <h2 class="section-title">Explore Categories</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category="Penetration Testing" onclick="filterCourses('Penetration Testing')">
+                    <div class="category-icon">🛡️</div>
+                    <h3>Penetration Testing</h3>
+                    <p>Learn to identify vulnerabilities and secure systems</p>
+                    <span class="course-count">12 Courses</span>
+                </div>
+                <div class="category-card" data-category="Cryptography" onclick="filterCourses('Cryptography')">
+                    <div class="category-icon">🔐</div>
+                    <h3>Cryptography</h3>
+                    <p>Master encryption and security protocols</p>
+                    <span class="course-count">8 Courses</span>
+                </div>
+                <div class="category-card" data-category="Network Security" onclick="filterCourses('Network Security')">
+                    <div class="category-icon">🌐</div>
+                    <h3>Network Security</h3>
+                    <p>Protect networks from cyber threats</p>
+                    <span class="course-count">15 Courses</span>
+                </div>
+                <div class="category-card" data-category="Bug Bounty" onclick="filterCourses('Bug Bounty')">
+                    <div class="category-icon">🐛</div>
+                    <h3>Bug Bounty</h3>
+                    <p>Find and report security vulnerabilities</p>
+                    <span class="course-count">10 Courses</span>
+                </div>
+                <div class="category-card" data-category="Malware Analysis" onclick="filterCourses('Malware Analysis')">
+                    <div class="category-icon">⚡</div>
+                    <h3>Malware Analysis</h3>
+                    <p>Analyze and reverse engineer malicious software</p>
+                    <span class="course-count">7 Courses</span>
+                </div>
+                <div class="category-card" data-category="Forensics" onclick="filterCourses('Forensics')">
+                    <div class="category-icon">🔍</div>
+                    <h3>Forensics</h3>
+                    <p>Digital investigation and evidence collection</p>
+                    <span class="course-count">9 Courses</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filtered Courses Section -->
+    <section id="filteredCourses" class="filtered-courses" style="display: none;">
+        <div class="container">
+            <div class="filter-header">
+                <h2 class="section-title" id="filterTitle">Courses</h2>
+                <button class="btn btn-secondary" onclick="showAllCourses()">Show All Courses</button>
+            </div>
+            <div class="courses-grid" id="filteredCoursesGrid">
+                <!-- Courses will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+        </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section class="featured-courses">
+        <div class="container">
+            <h2 class="section-title">Featured Courses</h2>
+            <div class="courses-grid">
+                <div class="course-card" data-category="Penetration Testing">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop" alt="Ethical Hacking Course">
+                        <div class="course-badge">Bestseller</div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-category">Penetration Testing</div>
+                        <h3>Complete Ethical Hacking Bootcamp</h3>
+                        <p>Master ethical hacking from scratch. Learn penetration testing, vulnerability assessment, and security tools.</p>
+                        <div class="course-meta">
+                            <div class="course-rating">
+                                <span class="stars">★★★★★</span>
+                                <span>4.9 (2,450)</span>
+                            </div>
+                            <div class="course-duration">24h 30m</div>
+                        </div>
+                        <div class="course-footer">
+                            <div class="ad-progress-container">
+                                <div class="ad-progress-text">
+                                    <span class="ad-count-display" data-course="Complete Ethical Hacking Bootcamp">0/5</span>
+                                    <span class="ad-label">Ads Watched</span>
+                                </div>
+                                <div class="ad-progress-bar">
+                                    <div class="ad-progress-fill" data-course="Complete Ethical Hacking Bootcamp" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline btn-full-width" onclick="enrollCourse('Complete Ethical Hacking Bootcamp')" id="btn-Complete Ethical Hacking Bootcamp">Watch Ads to Unlock</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="Network Security">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop" alt="Network Security Course">
+                        <div class="course-badge new">New</div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-category">Network Security</div>
+                        <h3>Advanced Network Security</h3>
+                        <p>Deep dive into network protocols, firewalls, intrusion detection, and secure network architecture.</p>
+                        <div class="course-meta">
+                            <div class="course-rating">
+                                <span class="stars">★★★★★</span>
+                                <span>4.8 (1,890)</span>
+                            </div>
+                            <div class="course-duration">18h 15m</div>
+                        </div>
+                        <div class="course-footer">
+                            <div class="ad-progress-container">
+                                <div class="ad-progress-text">
+                                    <span class="ad-count-display" data-course="Advanced Network Security">0/5</span>
+                                    <span class="ad-label">Ads Watched</span>
+                                </div>
+                                <div class="ad-progress-bar">
+                                    <div class="ad-progress-fill" data-course="Advanced Network Security" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline btn-full-width" onclick="enrollCourse('Advanced Network Security')" id="btn-Advanced Network Security">Watch Ads to Unlock</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="Bug Bounty">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=250&fit=crop" alt="Web Security Course">
+                        <div class="course-badge">Popular</div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-category">Bug Bounty</div>
+                        <h3>Web Application Security</h3>
+                        <p>Learn OWASP Top 10, SQL injection, XSS attacks, and secure coding practices for web applications.</p>
+                        <div class="course-meta">
+                            <div class="course-rating">
+                                <span class="stars">★★★★★</span>
+                                <span>4.7 (3,200)</span>
+                            </div>
+                            <div class="course-duration">16h 45m</div>
+                        </div>
+                        <div class="course-footer">
+                            <div class="ad-progress-container">
+                                <div class="ad-progress-text">
+                                    <span class="ad-count-display" data-course="Web Application Security">0/5</span>
+                                    <span class="ad-label">Ads Watched</span>
+                                </div>
+                                <div class="ad-progress-bar">
+                                    <div class="ad-progress-fill" data-course="Web Application Security" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline btn-full-width" onclick="enrollCourse('Web Application Security')" id="btn-Web Application Security">Watch Ads to Unlock</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="Penetration Testing">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=250&fit=crop" alt="Linux Hacking Course">
+                        <div class="course-badge">Hot</div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-category">Penetration Testing</div>
+                        <h3>Linux Hacking & Security</h3>
+                        <p>Master Linux command line, shell scripting, system administration, and security hardening techniques.</p>
+                        <div class="course-meta">
+                            <div class="course-rating">
+                                <span class="stars">★★★★★</span>
+                                <span>4.8 (2,100)</span>
+                            </div>
+                            <div class="course-duration">20h 10m</div>
+                        </div>
+                        <div class="course-footer">
+                            <div class="ad-progress-container">
+                                <div class="ad-progress-text">
+                                    <span class="ad-count-display" data-course="Linux Hacking & Security">0/5</span>
+                                    <span class="ad-label">Ads Watched</span>
+                                </div>
+                                <div class="ad-progress-bar">
+                                    <div class="ad-progress-fill" data-course="Linux Hacking & Security" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline btn-full-width" onclick="enrollCourse('Linux Hacking & Security')" id="btn-Linux Hacking & Security">Watch Ads to Unlock</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="Penetration Testing">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop" alt="Python Hacking Course">
+                        <div class="course-badge">Popular</div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-category">Penetration Testing</div>
+                        <h3>Python for Ethical Hacking</h3>
+                        <p>Build hacking tools with Python. Learn scripting, automation, network programming, and exploit development.</p>
+                        <div class="course-meta">
+                            <div class="course-rating">
+                                <span class="stars">★★★★★</span>
+                                <span>4.9 (3,500)</span>
+                            </div>
+                            <div class="course-duration">22h 30m</div>
+                        </div>
+                        <div class="course-footer">
+                            <div class="ad-progress-container">
+                                <div class="ad-progress-text">
+                                    <span class="ad-count-display" data-course="Python for Ethical Hacking">0/5</span>
+                                    <span class="ad-label">Ads Watched</span>
+                                </div>
+                                <div class="ad-progress-bar">
+                                    <div class="ad-progress-fill" data-course="Python for Ethical Hacking" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline btn-full-width" onclick="enrollCourse('Python for Ethical Hacking')" id="btn-Python for Ethical Hacking">Watch Ads to Unlock</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="Network Security">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop" alt="WiFi Hacking Course">
+                        <div class="course-badge">New</div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-category">Network Security</div>
+                        <h3>WiFi Hacking & Security</h3>
+                        <p>Learn to crack WEP, WPA, WPA2 networks. Understand wireless security protocols and protection methods.</p>
+                        <div class="course-meta">
+                            <div class="course-rating">
+                                <span class="stars">★★★★★</span>
+                                <span>4.7 (1,800)</span>
+                            </div>
+                            <div class="course-duration">14h 20m</div>
+                        </div>
+                        <div class="course-footer">
+                            <div class="ad-progress-container">
+                                <div class="ad-progress-text">
+                                    <span class="ad-count-display" data-course="WiFi Hacking & Security">0/5</span>
+                                    <span class="ad-label">Ads Watched</span>
+                                </div>
+                                <div class="ad-progress-bar">
+                                    <div class="ad-progress-fill" data-course="WiFi Hacking & Security" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline btn-full-width" onclick="enrollCourse('WiFi Hacking & Security')" id="btn-WiFi Hacking & Security">Watch Ads to Unlock</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="Bug Bounty">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=250&fit=crop" alt="SQL Injection Course">
+                        <div class="course-badge">Bestseller</div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-category">Bug Bounty</div>
+                        <h3>SQL Injection Mastery</h3>
+                        <p>Comprehensive guide to SQL injection attacks, database exploitation, and secure coding practices.</p>
+                        <div class="course-meta">
+                            <div class="course-rating">
+                                <span class="stars">★★★★★</span>
+                                <span>4.9 (2,800)</span>
+                            </div>
+                            <div class="course-duration">12h 45m</div>
+                        </div>
+                        <div class="course-footer">
+                            <div class="ad-progress-container">
+                                <div class="ad-progress-text">
+                                    <span class="ad-count-display" data-course="SQL Injection Mastery">0/5</span>
+                                    <span class="ad-label">Ads Watched</span>
+                                </div>
+                                <div class="ad-progress-bar">
+                                    <div class="ad-progress-fill" data-course="SQL Injection Mastery" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline btn-full-width" onclick="enrollCourse('SQL Injection Mastery')" id="btn-SQL Injection Mastery">Watch Ads to Unlock</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="Penetration Testing">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop" alt="Metasploit Course">
+                        <div class="course-badge">Popular</div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-category">Penetration Testing</div>
+                        <h3>Metasploit Framework</h3>
+                        <p>Master Metasploit for penetration testing. Learn exploit development, payload generation, and post-exploitation.</p>
+                        <div class="course-meta">
+                            <div class="course-rating">
+                                <span class="stars">★★★★★</span>
+                                <span>4.8 (2,300)</span>
+                            </div>
+                            <div class="course-duration">18h 50m</div>
+                        </div>
+                        <div class="course-footer">
+                            <div class="ad-progress-container">
+                                <div class="ad-progress-text">
+                                    <span class="ad-count-display" data-course="Metasploit Framework">0/5</span>
+                                    <span class="ad-label">Ads Watched</span>
+                                </div>
+                                <div class="ad-progress-bar">
+                                    <div class="ad-progress-fill" data-course="Metasploit Framework" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline btn-full-width" onclick="enrollCourse('Metasploit Framework')" id="btn-Metasploit Framework">Watch Ads to Unlock</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="Cryptography">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop" alt="Cryptography Course">
+                        <div class="course-badge">New</div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-category">Cryptography</div>
+                        <h3>Advanced Cryptography & Encryption</h3>
+                        <p>Master encryption algorithms, cryptographic protocols, and secure communication systems.</p>
+                        <div class="course-meta">
+                            <div class="course-rating">
+                                <span class="stars">★★★★★</span>
+                                <span>4.8 (1,650)</span>
+                            </div>
+                            <div class="course-duration">19h 30m</div>
+                        </div>
+                        <div class="course-footer">
+                            <div class="ad-progress-container">
+                                <div class="ad-progress-text">
+                                    <span class="ad-count-display" data-course="Advanced Cryptography & Encryption">0/5</span>
+                                    <span class="ad-label">Ads Watched</span>
+                                </div>
+                                <div class="ad-progress-bar">
+                                    <div class="ad-progress-fill" data-course="Advanced Cryptography & Encryption" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline btn-full-width" onclick="enrollCourse('Advanced Cryptography & Encryption')" id="btn-Advanced Cryptography & Encryption">Watch Ads to Unlock</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="Malware Analysis">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop" alt="Malware Analysis Course">
+                        <div class="course-badge">Popular</div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-category">Malware Analysis</div>
+                        <h3>Reverse Engineering & Malware Analysis</h3>
+                        <p>Learn to analyze malicious software, reverse engineer code, and understand malware behavior.</p>
+                        <div class="course-meta">
+                            <div class="course-rating">
+                                <span class="stars">★★★★★</span>
+                                <span>4.9 (2,100)</span>
+                            </div>
+                            <div class="course-duration">21h 15m</div>
+                        </div>
+                        <div class="course-footer">
+                            <div class="ad-progress-container">
+                                <div class="ad-progress-text">
+                                    <span class="ad-count-display" data-course="Reverse Engineering & Malware Analysis">0/5</span>
+                                    <span class="ad-label">Ads Watched</span>
+                                </div>
+                                <div class="ad-progress-bar">
+                                    <div class="ad-progress-fill" data-course="Reverse Engineering & Malware Analysis" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline btn-full-width" onclick="enrollCourse('Reverse Engineering & Malware Analysis')" id="btn-Reverse Engineering & Malware Analysis">Watch Ads to Unlock</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="Forensics">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=250&fit=crop" alt="Forensics Course">
+                        <div class="course-badge">Bestseller</div>
+                    </div>
+                    <div class="course-content">
+                        <div class="course-category">Forensics</div>
+                        <h3>Digital Forensics & Investigation</h3>
+                        <p>Master digital forensics techniques, evidence collection, and cybercrime investigation methods.</p>
+                        <div class="course-meta">
+                            <div class="course-rating">
+                                <span class="stars">★★★★★</span>
+                                <span>4.8 (1,950)</span>
+                            </div>
+                            <div class="course-duration">17h 45m</div>
+                        </div>
+                        <div class="course-footer">
+                            <div class="ad-progress-container">
+                                <div class="ad-progress-text">
+                                    <span class="ad-count-display" data-course="Digital Forensics & Investigation">0/5</span>
+                                    <span class="ad-label">Ads Watched</span>
+                                </div>
+                                <div class="ad-progress-bar">
+                                    <div class="ad-progress-fill" data-course="Digital Forensics & Investigation" style="width: 0%"></div>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline btn-full-width" onclick="enrollCourse('Digital Forensics & Investigation')" id="btn-Digital Forensics & Investigation">Watch Ads to Unlock</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terminal Section -->
+    <section id="terminal" class="terminal-section">
+        <div class="container">
+            <h2 class="section-title">Interactive Code Terminal</h2>
+            <p class="section-subtitle">Practice hacking commands in our safe, interactive terminal environment</p>
+            <div class="terminal-container">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="terminal-btn red"></span>
+                        <span class="terminal-btn yellow"></span>
+                        <span class="terminal-btn green"></span>
+                    </div>
+                    <div class="terminal-title">hackerx@terminal:~$</div>
+                </div>
+                <div class="terminal-body" id="terminalBody">
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">hackerx@terminal:~$</span>
+                        <span class="terminal-cursor">_</span>
+                    </div>
+                </div>
+                <div class="terminal-input-container">
+                    <input type="text" id="terminalInput" class="terminal-input" placeholder="Type commands here... (try: help, nmap, whoami, ls, pwd)">
+                    <button id="terminalSubmit" class="terminal-submit">Execute</button>
+                </div>
+                <div class="terminal-help">
+                    <h4>Available Commands:</h4>
+                    <div class="command-list">
+                        <span class="command-item">help</span>
+                        <span class="command-item">nmap</span>
+                        <span class="command-item">whoami</span>
+                        <span class="command-item">ls</span>
+                        <span class="command-item">pwd</span>
+                        <span class="command-item">ifconfig</span>
+                        <span class="command-item">netstat</span>
+                        <span class="command-item">ping</span>
+                        <span class="command-item">clear</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Tutorials Section -->
+    <section id="videos" class="videos-section">
+        <div class="container">
+            <h2 class="section-title">Hacking Video Tutorials</h2>
+            <p class="section-subtitle">Watch step-by-step hacking tutorials and learn by doing</p>
+            <div class="video-layout">
+                <div class="video-main">
+                    <div class="video-player">
+                        <div class="video-placeholder" id="mainVideo">
+                            <div class="play-button" id="playMainVideo">
+                                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                                    <circle cx="40" cy="40" r="40" fill="rgba(0, 255, 136, 0.3)"/>
+                                    <path d="M32 25L55 40L32 55V25Z" fill="#00ff88"/>
+                                </svg>
+                            </div>
+                            <div class="video-info">
+                                <h3 id="mainVideoTitle">Introduction to Ethical Hacking</h3>
+                                <p id="mainVideoDesc">Learn the fundamentals of ethical hacking and cybersecurity</p>
+                            </div>
+                        </div>
+                        <iframe id="videoFrame" style="display: none;" width="100%" height="100%" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-details">
+                        <h3 id="currentVideoTitle">Introduction to Ethical Hacking</h3>
+                        <div class="video-meta">
+                            <span class="video-views">125K views</span>
+                            <span class="video-date">2 days ago</span>
+                            <span class="video-duration">15:30</span>
+                        </div>
+                        <p id="currentVideoDescription">This comprehensive tutorial covers the basics of ethical hacking, including penetration testing methodologies, common vulnerabilities, and legal considerations. Perfect for beginners starting their cybersecurity journey.</p>
+                    </div>
+                </div>
+                <div class="video-sidebar">
+                    <h4>More Tutorials</h4>
+                    <div class="video-list">
+                        <div class="video-item active" data-video="3Kq1MIfTWCE" data-title="Introduction to Ethical Hacking" data-desc="Learn the fundamentals of ethical hacking and cybersecurity">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/3Kq1MIfTWCE/maxresdefault.jpg" alt="Video thumbnail">
+                                <span class="video-duration-badge">15:30</span>
+                            </div>
+                            <div class="video-item-info">
+                                <h5>Introduction to Ethical Hacking</h5>
+                                <p>HackerX Academy</p>
+                                <span>125K views • 2 days ago</span>
+                            </div>
+                        </div>
+
+                        <div class="video-item" data-video="bWEl6_PKZqY" data-title="Nmap Network Scanning Tutorial" data-desc="Master network scanning with Nmap. Learn port scanning, service detection, and vulnerability assessment techniques.">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/bWEl6_PKZqY/maxresdefault.jpg" alt="Video thumbnail">
+                                <span class="video-duration-badge">22:15</span>
+                            </div>
+                            <div class="video-item-info">
+                                <h5>Nmap Network Scanning Tutorial</h5>
+                                <p>HackerX Academy</p>
+                                <span>89K views • 5 days ago</span>
+                            </div>
+                        </div>
+
+                        <div class="video-item" data-video="ciNHn38sR6Y" data-title="SQL Injection Attack Demo" data-desc="Watch a real SQL injection attack demonstration. Learn how to identify and exploit SQL vulnerabilities safely.">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/ciNHn38sR6Y/maxresdefault.jpg" alt="Video thumbnail">
+                                <span class="video-duration-badge">18:45</span>
+                            </div>
+                            <div class="video-item-info">
+                                <h5>SQL Injection Attack Demo</h5>
+                                <p>HackerX Academy</p>
+                                <span>156K views • 1 week ago</span>
+                            </div>
+                        </div>
+
+                        <div class="video-item" data-video="WnN6dbos5u8" data-title="WiFi Security & Hacking" data-desc="Learn about WiFi security protocols, WPA/WPA2, and ethical hacking practices for wireless networks.">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/WnN6dbos5u8/maxresdefault.jpg" alt="Video thumbnail">
+                                <span class="video-duration-badge">25:10</span>
+                            </div>
+                            <div class="video-item-info">
+                                <h5>WiFi Security & Hacking</h5>
+                                <p>HackerX Academy</p>
+                                <span>203K views • 2 weeks ago</span>
+                            </div>
+                        </div>
+
+                        <div class="video-item" data-video="TCPIP" data-title="Metasploit Framework Basics" data-desc="Introduction to Metasploit framework. Learn exploit development, payload generation, and post-exploitation techniques.">
+                            <div class="video-thumbnail">
+                                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop" alt="Video thumbnail">
+                                <span class="video-duration-badge">30:20</span>
+                            </div>
+                            <div class="video-item-info">
+                                <h5>Metasploit Framework Basics</h5>
+                                <p>HackerX Academy</p>
+                                <span>178K views • 3 weeks ago</span>
+                            </div>
+                        </div>
+
+                        <div class="video-item" data-video="WEBHACK" data-title="Burp Suite Web Hacking" data-desc="Master Burp Suite for web application security testing. Learn proxy configuration, vulnerability scanning, and exploitation.">
+                            <div class="video-thumbnail">
+                                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=250&fit=crop" alt="Video thumbnail">
+                                <span class="video-duration-badge">28:50</span>
+                            </div>
+                            <div class="video-item-info">
+                                <h5>Burp Suite Web Hacking</h5>
+                                <p>HackerX Academy</p>
+                                <span>142K views • 1 month ago</span>
+                            </div>
+                        </div>
+
+                        <div class="video-item" data-video="PYTHON" data-title="Python Hacking Scripts" data-desc="Build your own hacking tools with Python. Learn network programming, automation, and exploit development.">
+                            <div class="video-thumbnail">
+                                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop" alt="Video thumbnail">
+                                <span class="video-duration-badge">35:15</span>
+                            </div>
+                            <div class="video-item-info">
+                                <h5>Python Hacking Scripts</h5>
+                                <p>HackerX Academy</p>
+                                <span>267K views • 1 month ago</span>
+                            </div>
+                        </div>
+
+                        <div class="video-item" data-video="7wLkk7_QPXM" data-title="Ethical Hacking Course" data-desc="Complete ethical hacking course covering penetration testing, vulnerability assessment, and security tools.">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/7wLkk7_QPXM/maxresdefault.jpg" alt="Video thumbnail">
+                                <span class="video-duration-badge">45:20</span>
+                            </div>
+                            <div class="video-item-info">
+                                <h5>Ethical Hacking Course</h5>
+                                <p>HackerX Academy</p>
+                                <span>312K views • 3 days ago</span>
+                            </div>
+                        </div>
+
+                        <div class="video-item" data-video="dc6q04o8Y6o" data-title="Cybersecurity Fundamentals" data-desc="Learn the fundamentals of cybersecurity, including threat analysis, security protocols, and defense strategies.">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/dc6q04o8Y6o/maxresdefault.jpg" alt="Video thumbnail">
+                                <span class="video-duration-badge">38:45</span>
+                            </div>
+                            <div class="video-item-info">
+                                <h5>Cybersecurity Fundamentals</h5>
+                                <p>HackerX Academy</p>
+                                <span>289K views • 1 week ago</span>
+                            </div>
+                        </div>
+
+                        <div class="video-item" data-video="ug8W0sFiVJo" data-title="Advanced Penetration Testing" data-desc="Advanced techniques for penetration testing, including exploit development, post-exploitation, and reporting.">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/ug8W0sFiVJo/maxresdefault.jpg" alt="Video thumbnail">
+                                <span class="video-duration-badge">42:30</span>
+                            </div>
+                            <div class="video-item-info">
+                                <h5>Advanced Penetration Testing</h5>
+                                <p>HackerX Academy</p>
+                                <span>245K views • 2 weeks ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructors Section -->
+    <section id="instructors" class="instructors">
+        <div class="container">
+            <h2 class="section-title">Learn from Industry Experts</h2>
+            <p class="section-subtitle">Our instructors are cybersecurity professionals with years of real-world experience</p>
+            <div class="instructors-grid">
+                <div class="instructor-card">
+                    <div class="instructor-image">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Anderson">
+                        <div class="instructor-badge">Expert</div>
+                    </div>
+                    <h3>John Anderson</h3>
+                    <p class="instructor-title">Senior Penetration Tester</p>
+                    <p class="instructor-bio">15+ years experience in ethical hacking and security consulting. Former security researcher at major tech companies.</p>
+                    <div class="instructor-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">45K</span>
+                            <span class="stat-label">Students</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">12</span>
+                            <span class="stat-label">Courses</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">4.9</span>
+                            <span class="stat-label">Rating</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="instructor-card">
+                    <div class="instructor-image">
+                        <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Michael Chen">
+                        <div class="instructor-badge">Expert</div>
+                    </div>
+                    <h3>Michael Chen</h3>
+                    <p class="instructor-title">Cybersecurity Architect</p>
+                    <p class="instructor-bio">Specializes in network security and cryptography. Published author and conference speaker.</p>
+                    <div class="instructor-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">38K</span>
+                            <span class="stat-label">Students</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">10</span>
+                            <span class="stat-label">Courses</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">4.8</span>
+                            <span class="stat-label">Rating</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="instructor-card">
+                    <div class="instructor-image">
+                        <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="David Rodriguez">
+                        <div class="instructor-badge">Expert</div>
+                    </div>
+                    <h3>David Rodriguez</h3>
+                    <p class="instructor-title">Malware Analyst</p>
+                    <p class="instructor-bio">Expert in reverse engineering and threat intelligence. Works with leading security firms.</p>
+                    <div class="instructor-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">42K</span>
+                            <span class="stat-label">Students</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">14</span>
+                            <span class="stat-label">Courses</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">4.9</span>
+                            <span class="stat-label">Rating</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="instructor-card">
+                    <div class="instructor-image">
+                        <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Robert Kim">
+                        <div class="instructor-badge">Expert</div>
+                    </div>
+                    <h3>Robert Kim</h3>
+                    <p class="instructor-title">Bug Bounty Hunter</p>
+                    <p class="instructor-bio">Top-ranked bug bounty hunter with $500K+ in rewards. Specializes in web application security.</p>
+                    <div class="instructor-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">50K</span>
+                            <span class="stat-label">Students</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">15</span>
+                            <span class="stat-label">Courses</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">4.9</span>
+                            <span class="stat-label">Rating</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Students Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Student">
+                        <div class="testimonial-info">
+                            <h4>Alex Thompson</h4>
+                            <p>Security Engineer</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"This platform changed my career. The hands-on labs and real-world scenarios helped me land my dream job in cybersecurity."</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/men/28.jpg" alt="Student">
+                        <div class="testimonial-info">
+                            <h4>James Wilson</h4>
+                            <p>Penetration Tester</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"Best investment I've made. The instructors are knowledgeable and the course material is comprehensive and up-to-date."</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Student">
+                        <div class="testimonial-info">
+                            <h4>Mark Davis</h4>
+                            <p>Cybersecurity Analyst</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-rating">★★★★★</div>
+                    <p class="testimonial-text">"The practical approach and real-world examples made complex concepts easy to understand. Highly recommended!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your Cybersecurity Journey?</h2>
+                <p>Join 500,000+ students learning ethical hacking and cybersecurity</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary btn-large">Get Started Free</button>
+                    <button class="btn btn-secondary btn-large" id="ctaInviteBtn" onclick="showInviteModal()">📤 Share & Invite Friends</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <div class="logo-icon">⚡</div>
+                        <span class="logo-text">HackerX</span>
+                    </div>
+                    <p>Learn ethical hacking and cybersecurity from industry experts. Build real-world skills and advance your career.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Courses</h4>
+                    <ul>
+                        <li><a href="#">Penetration Testing</a></li>
+                        <li><a href="#">Network Security</a></li>
+                        <li><a href="#">Web Security</a></li>
+                        <li><a href="#">Cryptography</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Instructors</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#" id="footerInviteBtn" onclick="showInviteModal(); return false;">📤 Invite Friends</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HackerX. All rights reserved.</p>
+                <div class="footer-share">
+                    <button class="btn btn-outline" id="footerShareBtn" onclick="showInviteModal(); return false;" style="margin-top: 1rem;">
+                        🔗 Get Your Invite Link
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div> <!-- End of mainApp -->
+
+    <script src="script.js"></script>
+    <!-- Capacitor Runtime -->
+    <script type="module">
+        import { Capacitor } from '@capacitor/core';
+        import { App } from '@capacitor/app';
+        import { StatusBar, Style } from '@capacitor/status-bar';
+        
+        // Initialize Capacitor
+        if (Capacitor.isNativePlatform()) {
+            // Set status bar style
+            StatusBar.setStyle({ style: Style.Dark });
+            StatusBar.setBackgroundColor({ color: '#000000' });
+            
+            // Handle app state changes
+            App.addListener('appStateChange', ({ isActive }) => {
+                console.log('App state changed. Is active?', isActive);
+            });
+            
+            // Handle back button on Android
+            App.addListener('backButton', ({ canGoBack }) => {
+                if (!canGoBack) {
+                    App.exitApp();
+                } else {
+                    window.history.back();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
+
